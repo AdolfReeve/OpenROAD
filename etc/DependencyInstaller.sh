@@ -941,7 +941,7 @@ case "${os}" in
     elif [[ "${os}" == "AlmaLinux" ]]; then
         rhelVersion=$(rpm -q --queryformat '%{VERSION}' almalinux-release | cut -d. -f1)
     fi
-        if [[ "${rhelVersion}" != "8" ]] && [[ "${rhelVersion}" != "9" ]]; then
+        if [[ "${rhelVersion}" != "8" ]] || [[ "${rhelVersion}" != "9" ]]; then
             echo "ERROR: Unsupported ${rhelVersion} version. Versions '8' and '9' are supported."
             exit 1
         fi
